@@ -1,52 +1,39 @@
 package vinterface;
 
 interface Vinterface {
-    String name="VIDYA";
+
     void start();
     
     void stop();
+}
+interface Ainterface extends Vinterface{
+    
+    void print();
     
     default void color()
     {
         System.out.println("My favourite color is Black");
     }
-    
-    static void run()
-    {
-        return;
-    }
 }
-interface Ainterface{
-    void disp();
-    
-    void print();
-    
-}
-class M implements Vinterface, Ainterface{
+class U implements Ainterface{
     public void start()
     {
-        System.out.println(" This is start method");
+        System.out.println("This is start Method");
     }
      public void stop()
     {
-        System.out.println(" This is stop method");
+        System.out.println("This is stop Method");
     }
-      public void disp()
+      public void print()
     {
-        System.out.println(" This is display method");
+        System.out.println("This is print Method");
     }
-       public void print()
-    {
-        System.out.println(" This is print method");
-    }
-       
-       public static void main(String[] args) {
-        M obj=new M();
+     
+      public static void main(String[] args) {
+        U obj=new U();
         obj.start();
         obj.stop();
-        obj.color();
-        obj.disp();
         obj.print();
-        System.out.println("The value is: "+name);
+        obj.color();
     }
 }
